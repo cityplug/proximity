@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /docker/portainer:/data
+    ports:
+      - 9000:9000
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns
+    container_name: cloudflareDNS
+    environment:
+      PUID: 0
+      PGID: 0
+      API_KEY: ktez6xlMnDf0yaD5xGuUjgI-PV95A2Dn3tohz6wV
+      ZONE: cityplug.co.uk
+      SUBDOMAIN: home.cityplug.co.uk
+    restart: unless-stopped
+  
+  homer:
+    image: b4bz/homer:latest
+    container_name: homer
+    hostname: homer  
+    volumes:
+      - /docker/homer/assets:/www/assets
+    ports:
+      - 85:8080
+    restart: unless-stopped

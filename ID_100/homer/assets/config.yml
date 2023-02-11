@@ -91,6 +91,13 @@ services:
         tagstyle: "is-link"
         url: "https://unifi.cityplug.co.uk:8443"
         target: "_blank" # optional html a tag target attribute
+      - name: "Proxmox"
+        logo: "assets/tools/proxmox.png"
+        subtitle: "... ... ... ..."
+        tag: "core"
+        tagstyle: "is-link"
+        url: "https://192.168.50.250:8006/"
+        target: "_blank" # optional html a tag target attribute
 
   - name: "//Estate"
     icon: "fa-solid fa-house-lock"
