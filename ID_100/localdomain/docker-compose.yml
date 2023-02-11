@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns
+    container_name: cloudflareDNS
+    environment:
+      PUID: 0
+      PGID: 0
+      API_KEY: ktez6xlMnDf0yaD5xGuUjgI-PV95A2Dn3tohz6wV
+      ZONE: cityplug.co.uk
+      SUBDOMAIN: home.cityplug.co.uk
+    restart: unless-stopped
