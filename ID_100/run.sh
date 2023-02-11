@@ -85,7 +85,4 @@ mv /opt/proximity/ID_100/homer/assets /docker/homer/assets
 docker start homer
 
 echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
-exit
-
-echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
 reboot
