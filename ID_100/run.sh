@@ -61,11 +61,6 @@ echo "#  ---  Running Addons  ---  #"
 rm -rf /etc/update-motd.d/* && rm -rf /etc/motd
 mv /opt/proximity/ID_100/10-uname /etc/update-motd.d/ && chmod +x /etc/update-motd.d/10-uname
 
-# --- Change root password
-echo "#  ---  Change root password  ---  #"
-passwd root
-echo "#  ---  Root password changed  ---  #"
-
 # --- Docker Service
 docker-compose --version && docker --version
 
@@ -84,5 +79,6 @@ rm -rf /docker/homer/*
 mv /opt/proximity/ID_100/homer/assets /docker/homer/assets
 docker start homer
 
+rm -rf /opt/proximity/
 echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
 reboot
