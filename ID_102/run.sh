@@ -77,8 +77,9 @@ docker ps
 
 echo "# --- Enter pihole user password --- #"
 docker exec -it pihole pihole -a -p
-echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
+#echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
 exit
 
+rm -rf /opt/proximity/
 echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
 reboot
