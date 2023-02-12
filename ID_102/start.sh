@@ -61,10 +61,24 @@ echo "#  ---  Running Addons  ---  #"
 rm -rf /etc/update-motd.d/* && rm -rf /etc/motd
 mv /opt/proximity/ID_102/10-uname /etc/update-motd.d/ && chmod +x /etc/update-motd.d/10-uname
 
-# --- Change root password
-echo "#  ---  Change root password  ---  #"
-passwd root
-echo "#  ---  Root password changed  ---  #"
+systemctl stop systemd-resolved
+systemctl disable systemd-resolved
+
+# --- Docker Service
+docker-compose --version && docker --version
+
+cd /opt/proximity/ID_102/localdomain
+echo
+docker-compose up -d
+
+docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent:latest
+
+docker ps
+
+echo "# --- Enter pihole user password --- #"
+docker exec -it pihole pihole -a -p
+echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
+exit
 
 echo "#  ---  COMPLETED | REBOOT SYSTEM  ---  #"
 reboot
