@@ -60,7 +60,7 @@ services:
         subtitle: "... ..."
         tag: "app"
         tagstyle: "is-link"
-        url: "http://192.168.50.***:24792/"
+        url: "http://192.168.50.253:24792/"
         target: "_blank" # optional html a tag target attribute
 
   - name: "//Services"
@@ -71,7 +71,7 @@ services:
         subtitle: "... ..."
         tag: "service"
         tagstyle: "is-success"
-        url: "http://192.168.50.***/admin/"
+        url: "http://192.168.50.253/admin/"
         target: "_blank" # optional html a tag target attribute
 
   - name: "//Management"
@@ -82,7 +82,7 @@ services:
         subtitle: "... ..."
         tag: "link"
         tagstyle: "is-link"
-        url: "http://192.168.50.***:9000"
+        url: "http://192.168.50.249:9000"
         target: "_blank" # optional html a tag target attribute
       - name: "Unifi Remote"
         logo: "assets/tools/controller.png"

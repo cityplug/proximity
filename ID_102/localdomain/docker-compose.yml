@@ -25,7 +25,7 @@ services:
     volumes:
       - /docker/unbound:/opt/unbound/etc/unbound/
     ports:
-      - 5335:53/upd
+      - 5335:53/udp
       - 5335:53/tcp
     restart: always
 
